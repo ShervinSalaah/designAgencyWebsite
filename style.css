@@ -1,0 +1,133 @@
+/* style.css — global styles for The Paper Agency */
+:root {
+  --bg-light: #fdfaf6;
+  --bg-dark: #1c1c1c;
+  --ink-light: #333;
+  --ink-dark: #f5f5f5;
+  --accent: #ff6f61;
+  --radius: 8px;
+}
+
+html {box-sizing:border-box;scroll-behavior:smooth;}
+*,*::before,*::after{box-sizing:inherit;}
+
+body{
+  margin:0;
+  font-family:"Segoe UI",sans-serif;
+  line-height:1.6;
+  background:var(--bg-light);
+  color:var(--ink-light);
+  background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.03)0 2px,transparent 2px 4px);
+  transition:background .6s,color .6s;
+}
+
+/* Dark‑mode toggle (shared code) */
+#darkmode:checked ~ main,
+#darkmode:checked ~ header,
+#darkmode:checked ~ footer{
+  --bg-light:var(--bg-dark);
+  --ink-light:var(--ink-dark);
+}
+
+/* Header & nav */
+header{
+  background:var(--bg-light);
+  padding:1rem 2rem;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:space-between;
+  border-bottom:2px dashed var(--ink-light);
+}
+header .logo{
+  font-size:1.8rem;
+  font-family:'Courier New',monospace;
+  background:var(--accent);
+  color:#fff;
+  padding:.1em .4em;
+  clip-path:polygon(0 0,100% 0,100% 80%,0 100%);
+}
+nav a{
+  margin:0 .5rem;
+  text-decoration:none;
+  color:var(--ink-light);
+  font-weight:600;
+}
+nav a:hover{text-decoration:underline wavy var(--accent);}
+
+/* Hero */
+.hero{
+  display:grid;
+  place-items:center;
+  min-height:70vh;
+  text-align:center;
+  padding:2rem;
+}
+.hero h2{font-size:clamp(1.8rem,4vw,3rem);max-width:40ch;margin:0 auto;}
+
+/* Fold effect */
+.fold{perspective:1000px;}
+.panel{transform-style:preserve-3d;transition:transform .8s;}
+.fold:hover .panel{transform:rotateX(-180deg);}
+
+/* Sticky dark‑mode button */
+.sticky-btn{
+  position:fixed;right:1rem;bottom:1rem;
+  background:var(--accent);color:#fff;
+  padding:.6em 1em;border-radius:var(--radius);
+  cursor:pointer;
+}
+
+/* Cards, polaroids, folders */
+.card,details{
+  border:2px dashed var(--ink-light);
+  padding:1rem;border-radius:var(--radius);
+  margin-block:1.5rem;
+  background:rgba(255,255,255,.7);
+  transition:transform .3s;
+}
+.card:hover,details:hover{transform:translateY(-4px);}
+
+.polaroid{
+  width:200px;aspect-ratio:3/4;background:#fff;
+  padding:.5rem;box-shadow:0 6px 10px rgba(0,0,0,.25);
+  margin:1rem;transform:rotate(-3deg);
+}
+.polaroid img{width:100%;height:80%;object-fit:cover;}
+.polaroid p{text-align:center;font-size:.85rem;margin:.4rem 0 0;}
+
+.folder{
+  display:inline-block;padding:2rem 3.5rem 1.5rem;
+  background:var(--bg-light);border:2px solid var(--ink-light);
+  border-radius:var(--radius) var(--radius) 0 0;position:relative;margin:2rem 1rem;
+}
+.folder::before{
+  content:"";position:absolute;top:-1.2rem;left:.8rem;
+  width:2rem;height:1rem;background:var(--bg-light);
+  border:2px solid var(--ink-light);border-bottom:none;
+  border-radius:var(--radius) var(--radius) 0 0;
+}
+
+/* Envelope (contact form) */
+.envelope{
+  position:relative;width:min(400px,90%);
+  margin:2rem auto;border:2px solid var(--ink-light);
+  padding:2rem 1.5rem 3rem;background:var(--bg-light);
+}
+.envelope::before{
+  content:"";position:absolute;top:-2px;left:-2px;
+  width:calc(100% + 4px);height:50%;background:var(--bg-light);
+  border-bottom:2px solid var(--ink-light);
+  transform-origin:top;transition:transform .8s;
+}
+.envelope:hover::before{transform:rotateX(180deg);}
+
+/* Forms */
+input,textarea,select,button{
+  width:100%;padding:.6rem;margin-block:.5rem 1rem;
+  border:2px dashed var(--ink-light);background:transparent;font-family:inherit;
+}
+button{background:var(--accent);color:#fff;border:none;cursor:pointer;}
+button:hover{opacity:.9;}
+
+footer{text-align:center;padding:1.2rem 0;border-top:2px dashed var(--ink-light);}

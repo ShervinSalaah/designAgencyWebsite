@@ -2,35 +2,234 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>The Paper Agency | Home</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>Family Adventures Tour & Travel</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f8f8;
+      padding: 40px;
+      color: #333;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .header-text {
+      max-width: 50%;
+    }
+    .header-text h1 {
+      font-size: 40px;
+      line-height: 1.2;
+      margin: 10px 0;
+    }
+    .highlight {
+      color: orange;
+      font-weight: bold;
+    }
+    .subtext {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #666;
+    }
+    .tag {
+      background: #d7f2d7;
+      color: green;
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #26b55f;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .hero-image {
+      max-width: 45%;
+      border-radius: 10px;
+    }
+    .services {
+      display: flex;
+      justify-content: space-between;
+      margin: 40px 0;
+    }
+    .service {
+      background: #fdf4f0;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 30%;
+    }
+    .service:nth-child(2) {
+      background: #f0fdf4;
+    }
+    .service:nth-child(3) {
+      background: #fff6f0;
+    }
+    .service h4 {
+      margin: 10px 0;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .card {
+      width: 48%;
+      background: #f8f8f8;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 15px;
+    }
+    .card-content p {
+      color: #777;
+      font-size: 13px;
+    }
+    .price-book {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .card .btn {
+      font-size: 12px;
+      padding: 5px 10px;
+      margin-top: 10px;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-around;
+      font-size: 14px;
+      margin-top: 40px;
+      color: #666;
+    }
+    .icon {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Global dark‑mode checkbox -->
-  <input type="checkbox" id="darkmode" hidden>
-
-  <header>
-    <div class="logo">The Paper Agency</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="lab.html">Lab</a>
-      <a href="about.html">About</a>
-      <a href="resources.html">Freebies</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <label for="darkmode" class="sticky-btn">Dark Sketch Mode</label>
-
-  <main class="hero fold">
-    <div class="panel">
-      <h2>We turn napkin sketches into <br>paper‑perfect brands.</h2>
+  <div class="container">
+    <div class="header">
+      <div class="header-text">
+        <div class="tag">Best Tour Agency</div>
+        <h1>Family <span class="highlight">Adventures</span><br>Tour & Travel</h1>
+        <p class="subtext">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <a href="#" class="btn">BOOK NOW</a>
+      </div>
+      <img src="assets/hero.png" class="hero-image" alt="Travel Hero">
     </div>
-  </main>
 
-  <footer><p>&copy; 2025 The Paper Agency. All rights reserved.</p></footer>
+    <div class="services">
+      <div class="service">
+        <div class="icon">🚗</div>
+        <h4>Car Riding</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      </div>
+      <div class="service">
+        <div class="icon">🚴‍♂️</div>
+        <h4>Bike Riding</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      </div>
+      <div class="service">
+        <div class="icon">🏕️</div>
+        <h4>Tent Camping</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      </div>
+    </div>
 
+    <div class="cards">
+      <div class="card">
+        <img src="assets/santorini.png" alt="Santorini">
+        <div class="card-content">
+          <small>📍 Santorini, Greece</small>
+          <h4>Santorini Island</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur.</p>
+          <div class="price-book">
+            <span>$49.00 Per Night</span>
+            <a href="#" class="btn">BOOK NOW</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/lofoton.png" alt="Lofoten">
+        <div class="card-content">
+          <small>📍 Cairo, Egypt</small>
+          <h4>Lofoten Islands</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur.</p>
+          <div class="price-book">
+            <span>$59.00 Per Night</span>
+            <a href="#" class="btn" style="background: orange;">BOOK NOW</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/liberty.png" alt="Statue of Liberty">
+        <div class="card-content">
+          <small>📍 New York City, USA</small>
+          <h4>Statue of Liberty</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur.</p>
+          <div class="price-book">
+            <span>$89.00 Per Night</span>
+            <a href="#" class="btn" style="background: orange;">BOOK NOW</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/china.png" alt="Great Wall of China">
+        <div class="card-content">
+          <small>📍 Beijing, China</small>
+          <h4>Great Wall of China</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur.</p>
+          <div class="price-book">
+            <span>$99.00 Per Night</span>
+            <a href="#" class="btn">BOOK NOW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>📞 +123 456 7890</div>
+      <div>✉️ youremail@here</div>
+      <div>🌐 yourwebsite here</div>
+      <div>📍 Your Location Here 00</div>
+    </div>
+  </div>
 </body>
 </html>
